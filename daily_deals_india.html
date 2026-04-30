@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Deals India | Best Offers & Discounts</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Configuration for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ff5722', // Deep Orange
+                        secondary: '#1e293b', // Slate 800
+                        accent: '#10b981', // Emerald 500 for success/savings
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* Hide scrollbar for category menu */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <i class="fa-solid fa-fire text-primary text-2xl mr-2"></i>
+                    <span class="font-bold text-xl tracking-tight text-secondary">DailyDeals<span class="text-primary">IN</span></span>
+                </div>
+
+                <!-- Search Bar (Desktop) -->
+                <div class="hidden md:flex flex-1 max-w-2xl mx-8">
+                    <div class="relative w-full">
+                        <input type="text" class="w-full bg-gray-100 border border-transparent text-gray-700 rounded-full py-2 px-4 pl-10 focus:outline-none focus:bg-white focus:border-primary transition-colors" placeholder="Search for products, brands, or deals...">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fa-solid fa-search text-gray-400"></i>
+                        </div>
+                        <button class="absolute inset-y-0 right-0 px-4 bg-primary text-white rounded-r-full hover:bg-orange-600 transition-colors">
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-500 hover:text-primary md:hidden">
+                        <i class="fa-solid fa-search text-xl"></i>
+                    </button>
+                    <button class="text-gray-500 hover:text-primary transition-colors relative">
+                        <i class="fa-regular fa-heart text-xl"></i>
+                        <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center">2</span>
+                    </button>
+                    <button class="text-gray-500 hover:text-primary transition-colors">
+                        <i class="fa-regular fa-user text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories Navigation -->
+    <nav class="bg-white border-t border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ul class="flex space-x-8 overflow-x-auto py-3 no-scrollbar text-sm font-medium text-gray-600">
+                <li class="whitespace-nowrap hover:text-primary cursor-pointer border-b-2 border-primary text-primary pb-1">All Deals</li>
+                <li class="whitespace-nowrap hover:text-primary cursor-pointer pb-1">Electronics</li>
+                <li class="whitespace-nowrap hover:text-primary cursor-pointer pb-1">Mobiles</li>
+                <li class="whitespace-nowrap hover:text-primary cursor-pointer pb-1">Fashion</li>
+                <li class="whitespace-nowrap hover:text-primary cursor-pointer pb-1">Home & Kitchen</li>
+                <li class="whitespace-nowrap hover:text-primary cursor-pointer pb-1">Beauty</li>
+                <li class="whitespace-nowrap hover:text-primary cursor-pointer pb-1">Travel</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Hero Banner -->
+        <div class="relative rounded-2xl overflow-hidden bg-gradient-to-r from-orange-500 to-red-600 text-white mb-10 shadow-lg">
+            <div class="absolute inset-0 bg-black opacity-20"></div>
+            <div class="relative z-10 p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between">
+                <div class="max-w-xl mb-6 md:mb-0">
+                    <span class="inline-block py-1 px-3 rounded-full bg-white text-red-600 text-xs font-bold tracking-wider mb-4 uppercase">Ends in 12 Hours</span>
+                    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">Mega Electronics Sale!</h1>
+                    <p class="text-lg md:text-xl mb-6 opacity-90">Get up to 80% off on top brands. Grab these lightning deals before they vanish.</p>
+                    <button class="bg-white text-orange-600 font-bold py-3 px-8 rounded-full shadow-md hover:bg-gray-100 hover:shadow-lg transition-all transform hover:-translate-y-1">
+                        Shop Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                <div class="hidden md:block w-48 h-48 lg:w-64 lg:h-64 rounded-full border-4 border-white border-opacity-30 flex items-center justify-center p-4 bg-white bg-opacity-10 backdrop-blur-sm shadow-xl">
+                    <div class="text-center">
+                        <div class="text-4xl lg:text-6xl font-black">80%</div>
+                        <div class="text-lg font-semibold uppercase tracking-widest mt-1">OFF</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deals Section Header -->
+        <div class="flex justify-between items-end mb-6">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 flex items-center">
+                    <i class="fa-solid fa-bolt text-yellow-500 mr-2"></i> Trending Today
+                </h2>
+                <p class="text-gray-500 text-sm mt-1">Handpicked deals updated every hour</p>
+            </div>
+            <div class="hidden sm:flex space-x-2">
+                <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors">Filter</button>
+                <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors">Sort: Recommended</button>
+            </div>
+        </div>
+
+        <!-- Deals Grid -->
+        <div id="deals-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Deal Cards will be injected here by JavaScript -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-fire text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl tracking-tight text-secondary">DailyDeals<span class="text-primary">IN</span></span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-4 max-w-sm">
+                        Your one-stop destination for the best offers, discounts, and coupons across India's top e-commerce stores. Never pay full price again!
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary text-xl"><i class="fa-brands fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-800 mb-4 uppercase text-sm tracking-wider">Quick Links</h3>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-primary transition-colors">Today's Deals</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Coupons</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Store Directory</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Submit a Deal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-800 mb-4 uppercase text-sm tracking-wider">Subscribe</h3>
+                    <p class="text-gray-500 text-sm mb-4">Get the best deals delivered to your inbox daily.</p>
+                    <form class="flex" onsubmit="event.preventDefault(); showToast('Subscribed to newsletter!');">
+                        <input type="email" placeholder="Your email" class="w-full bg-gray-100 border border-transparent rounded-l-lg py-2 px-3 text-sm focus:outline-none focus:border-primary" required>
+                        <button type="submit" class="bg-primary text-white px-4 py-2 rounded-r-lg hover:bg-orange-600 transition-colors text-sm font-medium">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Daily Deals India. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-gray-800">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-800">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Toast Notification -->
+    <div id="toast" class="fixed bottom-4 right-4 z-50 transform translate-y-full opacity-0 transition-all duration-300 ease-in-out">
+        <div class="bg-gray-800 text-white px-6 py-3 rounded-lg shadow-xl flex items-center space-x-3">
+            <i class="fa-solid fa-check-circle text-accent"></i>
+            <span id="toast-message" class="font-medium text-sm">Action successful!</span>
+        </div>
+    </div>
+
+    <!-- Application Logic -->
+    <script>
+        // Mock Data for Deals
+        const deals = [
+            {
+                id: 1,
+                title: "Sony WH-1000XM4 Noise Cancelling Wireless Headphones",
+                image: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=500&q=80",
+                mrp: 29990,
+                price: 19990,
+                store: "Amazon",
+                storeColor: "bg-blue-100 text-blue-800",
+                category: "Electronics",
+                isHot: true,
+                rating: 4.8,
+                reviews: 12450
+            },
+            {
+                id: 2,
+                title: "Apple iPhone 14 (128GB) - Midnight Black",
+                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80",
+                mrp: 79900,
+                price: 58999,
+                store: "Flipkart",
+                storeColor: "bg-yellow-100 text-yellow-800",
+                category: "Mobiles",
+                isHot: true,
+                rating: 4.7,
+                reviews: 8932
+            },
+            {
+                id: 3,
+                title: "Nike Air Max 270 Men's Running Shoes",
+                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80",
+                mrp: 12995,
+                price: 7495,
+                store: "Myntra",
+                storeColor: "bg-pink-100 text-pink-800",
+                category: "Fashion",
+                isHot: false,
+                rating: 4.5,
+                reviews: 3120
+            },
+            {
+                id: 4,
+                title: "Samsung Galaxy Watch 5 (44mm, Bluetooth)",
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80",
+                mrp: 33999,
+                price: 16999,
+                store: "Samsung",
+                storeColor: "bg-blue-100 text-blue-800",
+                category: "Electronics",
+                isHot: true,
+                rating: 4.6,
+                reviews: 5421
+            },
+            {
+                id: 5,
+                title: "MacBook Air M1 2020 (8GB RAM, 256GB SSD)",
+                image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80",
+                mrp: 99900,
+                price: 74990,
+                store: "Amazon",
+                storeColor: "bg-blue-100 text-blue-800",
+                category: "Laptops",
+                isHot: false,
+                rating: 4.9,
+                reviews: 21005
+            },
+            {
+                id: 6,
+                title: "American Tourister 32L Water Resistant Backpack",
+                image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=500&q=80",
+                mrp: 2499,
+                price: 999,
+                store: "Flipkart",
+                storeColor: "bg-yellow-100 text-yellow-800",
+                category: "Travel",
+                isHot: false,
+                rating: 4.3,
+                reviews: 1450
+            },
+            {
+                id: 7,
+                title: "Philips Air Fryer HD9200/90, 4.1L Capacity",
+                image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80",
+                mrp: 9995,
+                price: 5499,
+                store: "Amazon",
+                storeColor: "bg-blue-100 text-blue-800",
+                category: "Home",
+                isHot: false,
+                rating: 4.6,
+                reviews: 4230
+            },
+            {
+                id: 8,
+                title: "Puma Men's Graphic Print T-Shirt",
+                image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80",
+                mrp: 1499,
+                price: 599,
+                store: "Myntra",
+                storeColor: "bg-pink-100 text-pink-800",
+                category: "Fashion",
+                isHot: false,
+                rating: 4.1,
+                reviews: 890
+            }
+        ];
+
+        // Format currency for India (₹)
+        const formatCurrency = (amount) => {
+            return new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                maximumFractionDigits: 0
+            }).format(amount);
+        };
+
+        // Calculate discount percentage
+        const getDiscount = (mrp, price) => {
+            return Math.round(((mrp - price) / mrp) * 100);
+        };
+
+        // Toast Notification System
+        let toastTimeout;
+        const showToast = (message) => {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            
+            toastMessage.textContent = message;
+            toast.classList.remove('translate-y-full', 'opacity-0');
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('translate-y-full', 'opacity-0');
+            }, 3000);
+        };
+
+        // Copy promo code to clipboard
+        const copyCode = (dealTitle) => {
+            // Create a dummy code for demonstration
+            const code = "DEAL" + Math.floor(Math.random() * 1000);
+            
+            // Using modern clipboard API if available, else fallback
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(code).then(() => {
+                    showToast(`Code ${code} copied for ${dealTitle.substring(0,15)}...!`);
+                }).catch(err => {
+                    console.error('Failed to copy!', err);
+                    fallbackCopy(code);
+                });
+            } else {
+                fallbackCopy(code);
+            }
+        };
+
+        // Fallback copy method for older browsers or iFrames
+        const fallbackCopy = (text) => {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast(`Code ${text} copied!`);
+            } catch (err) {
+                showToast('Failed to copy code.');
+            }
+            document.body.removeChild(textArea);
+        };
+
+        // Render Deal Cards
+        const renderDeals = () => {
+            const grid = document.getElementById('deals-grid');
+            grid.innerHTML = '';
+
+            deals.forEach(deal => {
+                const discount = getDiscount(deal.mrp, deal.price);
+                
+                const cardHTML = `
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group relative">
+                        
+                        ${deal.isHot ? `
+                            <div class="absolute top-3 left-3 z-10 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm flex items-center">
+                                <i class="fa-solid fa-fire mr-1"></i> HOT DEAL
+                            </div>
+                        ` : ''}
+                        
+                        <!-- Image Container -->
+                        <div class="relative h-48 w-full bg-gray-100 overflow-hidden p-4">
+                            <img src="${deal.image}" alt="${deal.title}" onerror="this.src='https://via.placeholder.com/500x500?text=Image+Not+Found'" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                            
+                            <!-- Action Buttons overlay -->
+                            <div class="absolute inset-0 bg-black bg-opacity-10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+                                <button onclick="showToast('Added to wishlist!')" class="bg-white text-gray-800 h-10 w-10 rounded-full flex items-center justify-center hover:bg-red-50 hover:text-red-500 shadow-md transition-colors" title="Add to Wishlist">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                                <button onclick="copyCode('${deal.title.replace(/'/g, "\'")}')" class="bg-white text-gray-800 h-10 w-10 rounded-full flex items-center justify-center hover:bg-gray-50 shadow-md transition-colors" title="Copy Coupon Code">
+                                    <i class="fa-solid fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Content Container -->
+                        <div class="p-5 flex flex-col flex-grow">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-semibold px-2 py-1 rounded-md ${deal.storeColor}">${deal.store}</span>
+                                <div class="flex items-center text-xs text-yellow-500">
+                                    <i class="fa-solid fa-star mr-1"></i> ${deal.rating}
+                                    <span class="text-gray-400 ml-1">(${deal.reviews})</span>
+                                </div>
+                            </div>
+                            
+                            <h3 class="font-bold text-gray-800 text-sm md:text-base mb-3 line-clamp-2 leading-snug group-hover:text-primary transition-colors cursor-pointer" title="${deal.title}">
+                                ${deal.title}
+                            </h3>
+                            
+                            <div class="mt-auto">
+                                <div class="flex items-center mb-1">
+                                    <span class="text-xl font-bold text-gray-900">${formatCurrency(deal.price)}</span>
+                                    <span class="text-sm text-gray-400 line-through ml-2">${formatCurrency(deal.mrp)}</span>
+                                </div>
+                                <div class="text-sm font-semibold text-accent mb-4">
+                                    Save ${formatCurrency(deal.mrp - deal.price)} (${discount}% Off)
+                                </div>
+                                
+                                <button onclick="window.open('#', '_blank'); showToast('Redirecting to store...');" class="w-full bg-primary hover:bg-orange-600 text-white font-medium py-2.5 rounded-lg transition-colors flex items-center justify-center shadow-sm hover:shadow">
+                                    Get Deal <i class="fa-solid fa-up-right-from-square ml-2 text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += cardHTML;
+            });
+        };
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', () => {
+            renderDeals();
+        });
+
+    </script>
+</body>
+</html>
